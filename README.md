@@ -12,6 +12,8 @@
 * with open_url-el megnyitunk egy githubon tárolt txt fáljt
 
 * beolvassuk a fáljt classel és bele rakjuk egy listába
+
+* weboldal link: https://loczylevi.github.io/pyscript_dokumentacio/
       
       from pyodide.http import open_url
 
