@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+                    <meta charset="UTF-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+                    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+<py-script>
+from pyodide.http import open_url
+
+class Adatbazis:
+      def __init__(self,sor):
+            ev,elem,vegyjel,rendszam,felfedezo,atomtomeg,negativitas = sor.strip().split(";")
+            self.ev = ev
+            self.elem = elem
+            self.vegyjel = vegyjel
+            self.rendszam = rendszam
+            self.felfedezo = felfedezo
+            self.atomtomeg = atomtomeg
+            self.negativitas = negativitas
+ 
+with open_url("https://raw.githubusercontent.com/loczylevi/Kemiai_Elemek/main/tablazat.txt") as f:
+      f.readline()
+      lista = [Adatbazis(sor) for sor in f]
+for sor in lista:
+    print(sor.ev)
+
+</py-script>
+                    
+</body>
+</html>
